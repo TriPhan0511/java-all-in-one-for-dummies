@@ -1,4 +1,4 @@
-package book02chapter03workingwithnumbersandexpressions09usingmathclass;
+package book02.chapter03workingwithnumbersandexpressions.usingthemathclass;
 
 import java.util.Scanner;
 
