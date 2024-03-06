@@ -1,3 +1,4 @@
+// Using constructors
 package book03objectorientedprogramming.chapter02makingyourownclasses;
 
 public class Actor {
@@ -23,10 +24,10 @@ public class Actor {
         System.out.println(this);
     }
 
-    // @Override
-    // public String toString() {
-    //     String goodActor = this.goodActor ? "good" : "bad";
-    //     return "His full name is " + firstName + " " + lastName 
-    //             + ". He is a " + goodActor + " actor.";
-    // }
+    @Override
+    public String toString() {
+        String goodActor = this.goodActor ? "good" : "bad";
+        return "His full name is " + firstName + " " + lastName 
+                + ". He is a " + goodActor + " actor.";
+    }
 }
