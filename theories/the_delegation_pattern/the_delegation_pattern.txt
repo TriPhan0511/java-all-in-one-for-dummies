@@ -1,0 +1,22 @@
+THE DELEGATION PATTERN
+
+Inheritance is one of the great features of object-oriented programming languages such
+as Java, but it isn’t the answer to every programming problem.
+
+Suppose that you need to create a class named EmployeeCollection that represents
+a group of employees. One way to create this class would be to extend one of
+the collection classes supplied by the Java API, such as the ArrayList class. Then your
+EmployeeCollection class would be a specialized version of the ArrayList class and
+would have all the methods that are available to the ArrayList class.
+
+A simpler alternative, however, would be to declare a class field of type ArrayList
+within your EmployeeCollection class. Then you could provide methods that use
+this ArrayList object to add or retrieve employees from the collection. In effect, your
+EmployeeCollection class is simply a wrapper of the ArrayList class, perhaps with
+a few bells and whistles added that pertain specifically to employees.
+
+This technique is an application of a common design pattern called Deletagion. Why
+is it called that? Because instead of writing code that implements the functions of the
+collection, you delegate that task to an ArrayList object, which already knows how to
+perform these functions. (For more information about the ArrayList class, see Book 4,
+Chapter 3.)
