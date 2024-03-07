@@ -1,4 +1,4 @@
-package theories.the_singleton_pattern.sample;
+package theories.patterns.the_singleton_pattern.sample;
 
 public class SingletonClass {
     private static SingletonClass instance;

@@ -1,0 +1,35 @@
+THE FACTORY PATTERN
+
+One common use for abstract classes is to provide a way to obtain an instance of one
+of several subclasses when you don’t know which subclass you need in advance. To do
+this, you can create a Factory class that has one or more methods that return subclasses
+of the abstract class.
+
+Suppose that you want to create a Ball object, but you want to let the user choose
+whether to create a SoftBall or a BaseBall. To use the Factory pattern, you create a
+class (I call it BallFactory) that has a method named getBallInstance. This method
+accepts a String parameter that’s set to "BaseBall" if you want a BaseBall object or
+"SoftBall" if you want a SoftBall object.
+
+Here’s the factory class:
+
+    public class BallFactory {
+        public Ball getBall(String ballType) {
+            if (ballType.equalsIgnoreCase("BaseBall")) {
+                return new BaseBall();
+            } 
+            if (ballType.equalsIgnoreCase("SoftBall")) {
+                return new SoftBall();
+            }
+            return null;
+        }
+    }
+
+Then, assuming that the String variable userChoice has been set according to the
+user’s choice, you can create the selected type of Ball object like this:
+
+    Ball ball = BallFactory.getBall(userChoice);
+
+In an actual application, using an enum variable is better than using a String variable to
+indicate the type of object to be returned (in sample2).
+

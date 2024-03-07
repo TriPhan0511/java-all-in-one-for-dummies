@@ -1,4 +1,4 @@
-package theories.the_singleton_pattern.sample;
+package theories.patterns.the_singleton_pattern.sample;
 public class SingletonClassTester {
     public static void main(String[] args) {
         SingletonClass instance1 = SingletonClass.getInstance();
