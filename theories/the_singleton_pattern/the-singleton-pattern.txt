@@ -1,0 +1,50 @@
+A singleton is a class that you can use to create only one instance. When you try to create
+an instance, the class first checks to see whether an instance already exists. If so, the
+existing instance is used; if not, a new instance is created.
+
+You can’t achieve this effect by using Java constructors, because a class instance has
+already been created by the time the constructor is executed. (That’s why you can use
+the this keyword from within a constructor.) As a result, the normal way to implement
+a singleton class is to declare all the constructors for the class as private. That way, the
+constructors aren’t available to other classes. Then you provide a static method that
+returns an instance. This method either creates a new instance or returns an existing
+instance.
+
+Here’s a bare-bones example of a singleton class:
+
+    public class SingletonClass {
+        private static SingletonClass instance;
+        
+        private SingletonClass() {}
+
+        public static SingletonClass getInstance () {
+            if (instance == null) {
+                instance = new SingletonClass();
+            }
+            return instance;
+        }
+    }
+
+Here the SingletonClass contains a private instance variable that maintains a reference
+to an instance of the class. Then a default constructor is declared with private
+visibility to prevent the constructor from being used outside the class. Finally, the static
+getInstance method calls the constructor to create an instance if the instance variable
+is null. Then it returns the instance to the caller.
+
+Here’s a bit of code that calls the getInstance method twice and then compares the
+resulting objects:
+
+    SingletonClass instance1 = SingletonClass.getInstance();
+    SingletonClass instance2 = SingletonClass.getInstance();
+    if (instance1 == instance2) {
+        System.out.println("Both instances are the same");
+    } else {
+        System.out.println("Both instances are different");
+    }
+    // Output: 
+    // Both instances are the same
+
+When this code is run, the first call to getInstance creates a new instance of the
+SingletonClass class. The second call to getInstance simply returns a reference to
+the instance that was created in the first call. As a result, the comparison in the if statement
+is true, and the first message is printed to the console.    
