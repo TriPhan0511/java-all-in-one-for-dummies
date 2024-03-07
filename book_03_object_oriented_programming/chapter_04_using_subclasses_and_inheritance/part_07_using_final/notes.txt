@@ -1,0 +1,5 @@
+Java has a final keyword that serves three purposes. When you use final with a
+variable, it creates a constant whose value can’t be changed after it has been initialized.
+Constants are covered in Book 2, Chapter 2, so I won’t describe this use
+of the final keyword more here. The other two uses of the final keyword are to
+create final methods and final classes. 
