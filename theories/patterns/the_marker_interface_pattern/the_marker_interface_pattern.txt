@@ -1,0 +1,23 @@
+THE MARKER INTERFACE PATTERN
+
+A marker interface is an interface that doesn’t have any members. Its sole purpose in life
+is to identify a class as belonging to a set of classes that possess some capability or have
+some characteristic in common.
+
+The best-known example of a marker interface is the Java API Cloneable interface,
+which marks classes that can be cloned. The Object class, which all classes ultimately
+inherit, provides a method named clone that can be used to create a copy of the
+object. You’re allowed to call the clone method only if the object implements the
+Cloneable interface, however. If you try to call clone for an object that doesn’t implement
+Cloneable, CloneNotSupportedException is thrown. (For more information
+about the clone method, refer to Book 3, Chapter 6.)
+
+Here’s the actual code for the Cloneable interface:
+
+    public interface Cloneable {
+    }
+    
+In some cases, you might find a use for marker interfaces in your own application. If
+you’re working on a series of classes for creating games, you might create a marker
+interface named Winnable to distinguish games that have a winner from games that
+you just play for enjoyment.
