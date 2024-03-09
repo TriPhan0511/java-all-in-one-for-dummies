@@ -1,0 +1,29 @@
+USING CLONE TO CREATE A SHALLOW COPY
+
+In the preceding example, the clone method manually creates a copy of the original
+object and returns it. In many cases, this is the easiest way to create a clone.
+But what if your class has a hundred or more fields that need to be duplicated? The
+chance of forgetting to copy one of the fields is high, and if you add a field to the
+class later on, you may forget to modify the clone method to include the new field.
+
+Fortunately, you can solve this problem by using the clone method of the Object
+class directly in your own clone method. The clone method of the Object class
+can automatically create a copy of your object that contains duplicates of all the
+fields that are primitive types (such as int and double), as well as copies of
+immutable reference types — most notably, strings. So if all the fields in your
+class are either primitives or strings, you can use the clone method provided by
+the Object class to clone your class.
+
+To call the clone method from your own clone method, just specify super.
+clone(). Before you can do that, however, you must do two things:
+
+    1. Declare that the class supports the Cloneable interface. The Cloneable
+        interface is a marker interface that doesn’t provide any methods. It simply
+        marks a class as being appropriate for cloning.
+
+    2. Enclose the call to super.clone() in a try/catch statement that catches the
+        exception CloneNotSupportedException. This exception is thrown if you try
+        to call clone on a class that doesn’t implement the Cloneable interface.
+        Provided that you implement Cloneable, this exception won’t ever happen,
+        but because CloneNotSupportedException is a checked exception, you
+        must catch it.
