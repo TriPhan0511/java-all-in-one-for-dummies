@@ -1,0 +1,23 @@
+CREATING DEEP COPIES
+
+It’s not uncommon for some fields in a class actually to be other objects. The
+Employee class, for example, might have a field of type Address that’s used to
+store each employee’s address:
+
+    class Employee
+    {
+    public Address address;
+    // other fields and methods omitted
+    }
+
+If that’s the case, the super.clone() method won’t make a complete copy of the
+object. The clone won’t get a clone of the address field. Instead, it has a reference
+to the same address object as the original.
+
+To solve this problem, you must do a deep copy of the Employee object. A deep copy
+is a clone in which any subobjects within the main object are also cloned or copied.
+To accomplish this feat, the clone method override first calls super.clone() to
+create a shallow copy of the object. Then it calls the clone method of each of the
+subobjects contained by the main object to create clones of those objects. (For a
+deep copy to work, of course, those objects must also support the clone methods
+or contain code to copy their values.)

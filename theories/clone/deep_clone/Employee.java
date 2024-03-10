@@ -1,15 +1,15 @@
-package book_03_object_oriented_programming.chapter_06_using_object_and_class_classes.part_04_the_clone_method.section_03_creating_deep_copies.sample2;
+package theories.clone.deep_clone;
 
 public class Employee implements Cloneable {
     private String firstName;
     private String lastName;
     private double salary;
-    public Address address;
+    private Address address;
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = new Address();
+        this.salary = salary;
     }    
 
     public String getFirstName() {
@@ -36,25 +36,33 @@ public class Employee implements Cloneable {
         this.salary = salary;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     protected Object clone() {
         Employee emp;
         try {
             emp = (Employee) super.clone();
-            emp.address = (Address) address.clone();
+            emp.setAddress((Address) address.clone());
         } catch (CloneNotSupportedException e) {
-            return null; // will never happen
-        }
+            return null; // will never happen because this class is Cloneable
+        }        
         return emp;
     }
-     @Override
-     public String toString() {
-        return this.getClass().getName() + " ["
+
+    @Override 
+    public String toString() { 
+        return "Employee [" 
             + firstName + " "
-            + lastName + " "
-            + salary + " "
-            + address + "]";
-     }
-
+            + lastName + ", "
+            + "salary: " + salary + ", "
+            + "address: " + address
+            + "]"; 
+    }
 }
-
