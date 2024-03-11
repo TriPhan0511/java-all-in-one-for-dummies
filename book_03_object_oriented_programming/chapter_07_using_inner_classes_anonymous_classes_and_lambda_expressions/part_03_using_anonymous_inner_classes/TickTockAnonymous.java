@@ -3,7 +3,8 @@ package book_03_object_oriented_programming.chapter_07_using_inner_classes_anony
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TickTockAnonymous {
     private String tickMessage = "Tick...";
