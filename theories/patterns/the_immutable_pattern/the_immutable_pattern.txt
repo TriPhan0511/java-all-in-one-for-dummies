@@ -1,0 +1,22 @@
+THE IMMUTABLE PATTERN
+
+Many applications can benefit from classes that describe immutable objects. An
+immutable object is an object that, once created, can never be changed. The String
+class is the most common example of an immutable object. After you create a
+String object, you can’t change it.
+
+Suppose that you’re designing a game in which the playing surface has fixed obstacles,
+such as trees. You can create the Tree class by using the Immutable pattern. The constructor
+for the Tree class could accept parameters that define the size, type, and location
+of the tree. But after you create the tree, you can’t move it.
+
+Follow these three simple rules for creating an immutable object:
+
+    * Provide one or more constructors that accept parameters to set the initial state of
+        the object.
+
+    * Don’t allow any methods to modify any instance variables in the object. Set instance
+        variables with constructors and then leave them alone.
+
+    * Any method that modifies the object should do so by creating a new object with the
+        modified values. Then this method returns the new object as its return value.
