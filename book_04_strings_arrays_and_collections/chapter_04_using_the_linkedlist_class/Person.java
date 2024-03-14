@@ -1,4 +1,4 @@
-package book_04_strings_arrays_and_collections.chapter_o4_using_the_linkedlist_class;
+package book_04_strings_arrays_and_collections.chapter_04_using_the_linkedlist_class;
 
 public class Person {
     private String name;
