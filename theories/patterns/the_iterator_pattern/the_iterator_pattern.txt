@@ -1,0 +1,23 @@
+THE ITERATOR PATTERN
+
+Java’s iterators follow a common design pattern called the Iterator pattern, which is
+useful whenever you need to provide sequential access to a collection of objects. The
+Iterator pattern relies on interfaces so that the code that’s using the iterator doesn’t
+have to know what actual class is being iterated. As long as the class implements the
+iterator interface, it can be iterated.
+
+The Iterator interface itself defines the methods used for sequential access. The common
+pattern is for this interface to provide at least two methods:
+
+    * hasNext: Returns a boolean value that indicates whether another item is available.
+
+    * next: Returns the next item.
+
+Java also defines a third method for its Iterator interface: remove, which removes the
+most recently retrieved object.
+
+In addition to the Iterator interface, the collection class itself needs a way to get
+an iterator object. It does so via the iterator method, which simply returns an
+iterator object for the collection. The iterator method is defined by the Iterable
+interface. Thus, any object that implements Iterable has an iterator method that
+provides an iterator for the object.
