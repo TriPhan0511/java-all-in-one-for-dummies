@@ -62,6 +62,7 @@ public class Tester {
             dateTime3 = LocalDateTime.parse("2014-12-15T03:45"); // OK
             // dateTime3 = LocalDateTime.parse("2014-12-15"); // Error since the string has not time
             // dateTime3 = LocalDateTime.parse("2014-15-15"); // Error
+            System.out.println(dateTime3.toString());
         } catch (DateTimeException e) {
             System.out.println(e.toString());
         }
